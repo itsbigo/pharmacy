@@ -54,3 +54,39 @@ model Product {
   orders      Order[]
   updatedAt   DateTime @updatedAt
 }
+
+model Patient {
+  address       String?
+  bloodGroup    String?
+  createdAt     DateTime                  @default(now())
+  dateOfBirthAd DateTime?
+  dateOfBirthBs DateTime?
+  email         Int?
+  firstName     String?
+  gender        EnumPatientGender?
+  id            String                    @id @default(cuid())
+  lastName      String?
+  maritalStatus EnumPatientMaritalStatus?
+  middleName    String?
+  occupation    String?
+  phone         EnumPatientPhone
+  updatedAt     DateTime                  @updatedAt
+}
+
+enum EnumPatientGender {
+  Male
+  Female
+  Others
+}
+
+enum EnumPatientMaritalStatus {
+  Married
+  Single
+  Widow
+}
+
+enum EnumPatientPhone {
+  Male
+  Female
+  Others
+}
